@@ -1,0 +1,68 @@
+<h2>user</h2>
+<form  #form="ngForm"     (ngSubmit)="onSubmit()" >
+  
+    
+      <label>Id</label>
+      <input type="string" minlength="9"maxlength="9" required="required" placeholder="id" id="id" name="PersonId" [(ngModel)]="personService.person.PersonId" >
+    
+  
+      <label>first Name</label>
+      <input type="text" required="required" placeholder="first name" id="firstName" name="FirstName"[(ngModel)]="personService.person.FirstName" >
+    
+      <label>last Name</label>
+      <input type="text" required="required"placeholder="last name" id="lastName" name="LastName"[(ngModel)]="personService.person.LastName">
+    
+      <label>birth date</label>
+      <input type="date"required="required" placeholder="birth date" id="birthDate" name="BirthDate"[(ngModel)]="personService.person.BirthDate">
+   
+      <label for="HMO">select HMO</label>
+    <select name="HMO"[(ngModel)]="personService.person.HMO" required="required">
+      <option *ngFor="let HMO of this.healthFunds" [ngValue]="HMO" type="string" placeholder="כללית" id="HMO" name="HMO" >
+        {{HMO}}
+       
+      <option>
+    </select>
+  
+  <label for="gender">select gender</label>
+    <select name="Gender"[(ngModel)]="this.personService.person.Gender" required="required">
+     
+      <option *ngFor="let gender of this.genders" [ngValue]="gender" name="gender" >
+        {{gender}}
+      <option>
+    </select>
+  
+
+ 
+      
+   
+     
+      <button type="button" (click)="addChild()">Add child</button>
+      <div style="margin-left: 30px">
+
+          <div *ngFor="let child of this.personService.person.Children; let childIndex=index">
+            <div  style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <td>Id : <input type="string" required="required"placeholder="id" id="id" name="ChildID" [value]="child.ChildID"[(ngModel)]="child.ChildID"></td>
+                  <td>Name: <input type="text" required="required"placeholder=" name" id="name"name="ChildName" [value]="child.ChildName" [(ngModel)]="child.ChildName"></td>
+                  <td>birthDate: <input type="date" required="required"placeholder=" birthDate" id="birthDate" [value]="child.BirthDate" name="BirthDate"[(ngModel)]="child.BirthDate"></td>
+                
+                 
+                </tr>
+              </table>
+            
+            </div>
+          </div>
+
+      </div>
+  
+
+  <hr>
+
+  <div>
+    <button type="submit">submit</button>
+    <br>
+    <button type="button" (click)="exportAsXLSX()" >save person details as excel file</button>
+    <a (click)="clearForm()" type="" class="danger">ClearForm</a>
+  </div>
+</form>
