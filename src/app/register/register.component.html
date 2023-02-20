@@ -43,9 +43,9 @@
             <div  style="overflow-x:auto;">
               <table>
                 <tr>
-                  <td>Id : <input type="string" required="required"placeholder="id" id="id" name="ChildID" [value]="child.ChildID"[(ngModel)]="child.ChildID"></td>
-                  <td>Name: <input type="text" required="required"placeholder=" name" id="name"name="ChildName" [value]="child.ChildName" [(ngModel)]="child.ChildName"></td>
-                  <td>birthDate: <input type="date" required="required"placeholder=" birthDate" id="birthDate" [value]="child.BirthDate" name="BirthDate"[(ngModel)]="child.BirthDate"></td>
+                  <td>Id : <input type="string" required="required"placeholder="id" id="id" name="ChildID{{childIndex}}" [value]="child.ChildID"[(ngModel)]="child.ChildID"></td>
+                  <td>Name: <input type="text" required="required"placeholder=" name" id="name"name="ChildName{{childIndex}}" [value]="child.ChildName" [(ngModel)]="child.ChildName"></td>
+                  <td>birthDate: <input type="date" required="required"placeholder=" birthDate" id="birthDate" [value]="child.BirthDate" name="BirthDate{{childIndex}}"[(ngModel)]="child.BirthDate"></td>
                 
                  
                 </tr>

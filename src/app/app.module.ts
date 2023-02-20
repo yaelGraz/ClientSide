@@ -15,6 +15,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,10 +31,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
     MatMenuModule,
     MatToolbarModule,
+    ReactiveFormsModule
    
   ],
   providers: [],
